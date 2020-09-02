@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CoolTitle(props) {
   const titulo = props.info ?? "Olá, mundo!";
-  return (<h1>{titulo}</h1>);
+
+  const [title, setTitle] = useState(titulo);
+
+  function handleChange(event) {
+    setTitle(event.target.value);
+  }
+
+  return (
+    <div>
+      <input type="text" name="name" value={title} onChange={handleChange} />
+      <h1>{title}</h1>
+    </div>
+  );
 }
 
 export default CoolTitle;
