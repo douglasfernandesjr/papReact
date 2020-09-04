@@ -1,15 +1,16 @@
 import React from "react";
+import './Polaroid.css';
 
-function Polaroid() {
-  const urlImg =
-    "http://jardinagembelasflores.comunidades.net/1423066980_08/104_decoracao6.jpg";
-  const text = "Imagem Polaroid";
+/**
+ * @param {string} url - Polaroid image url
+ * @param {string} text - Polaroid legend and alt text.
+ */
+function Polaroid(props) {
   return (
     <div className="polaroid">
-      <img src={urlImg} alt={text}></img>
-      <h3>{text}</h3>
-    </div>
-  );
+        <img src={props.url} alt={props.text}></img>
+        <h3>{props.text}</h3>
+    </div >);
 }
 
 export default Polaroid;
