@@ -17,7 +17,6 @@
 
 .polaroid.right {
     transform: rotate(3deg);
-   
 }
 
 .polaroid:hover {
@@ -29,4 +28,8 @@
 
 .polaroid img {
     max-width: 100%;
+}
+
+.polaroid:active img  {
+    box-shadow: 0 0px 12px rgb(79 220 168);
 }
