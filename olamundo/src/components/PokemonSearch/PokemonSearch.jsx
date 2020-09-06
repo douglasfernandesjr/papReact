@@ -17,9 +17,9 @@ function PokemonSearch() {
   }, []); // o [] garante que somente será executado uma única vez.
 
   return (
-    <>
+    <> 
       {pokemonList.map((item, i) => (
-        <div>
+        <div key={i}>
           <h3>{item.name}</h3>
           <a href={item.url} target="_blank">
             Mais Informações
