@@ -23,7 +23,7 @@ function mountApiUrl(selectedGen) {
       break;
     case "gen6":
       limit = 72;
-      offset = 649;
+      offset = 649; 
       break;
     case "gen7":
       limit = 88;
