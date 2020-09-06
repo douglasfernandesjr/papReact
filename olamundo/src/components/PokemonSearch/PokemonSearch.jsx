@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import PokemonSearchContext from "./PokemonSearchContext";
+import PokemonBadge from "./PokemonBadge";
+import "./PokemonSearch.css";
+import PokemonList from "../PokemonList";
 
 function mountApiUrl(selectedGen) {
   let limit = 151;
@@ -23,7 +27,7 @@ function mountApiUrl(selectedGen) {
       break;
     case "gen6":
       limit = 72;
-      offset = 649; 
+      offset = 649;
       break;
     case "gen7":
       limit = 88;
@@ -62,29 +66,29 @@ function PokemonSearch() {
   }
 
   return (
-    <>
-      <label>
-        Escolha a geração
-        <select value={selectedGen} onChange={handleSelectedGenChange}>
-          <option value="gen1">Geração I</option>
-          <option value="gen2">Geração II</option>
-          <option value="gen3">Geração III</option>
-          <option value="gen4">Geração IV</option>
-          <option value="gen5">Geração V</option>
-          <option value="gen6">Geração VI</option>
-          <option value="gen7">Geração VII</option>
-          <option value="gen8">Geração VIII</option>
-        </select>
-      </label>
-      {pokemonList.map((item, i) => (
-        <div key={i}>
-          <h3>{item.name}</h3>
-          <a href={item.url} target="_blank">
-            Mais Informações
-          </a>
+    <PokemonSearchContext.Provider value={pokemonList}>
+      <div className="pokemon_search">
+        <div className="pokemon_search_side">
+          <div className="pokemon_search_box">
+            <h3>Escolha a geração</h3>
+            <select value={selectedGen} onChange={handleSelectedGenChange}>
+              <option value="gen1">Geração I</option>
+              <option value="gen2">Geração II</option>
+              <option value="gen3">Geração III</option>
+              <option value="gen4">Geração IV</option>
+              <option value="gen5">Geração V</option>
+              <option value="gen6">Geração VI</option>
+              <option value="gen7">Geração VII</option>
+              <option value="gen8">Geração VIII</option>
+            </select>
+          </div>
+          <PokemonBadge />
         </div>
-      ))}
-    </>
+        <div className="pokemon_search_main">
+          <PokemonList />
+        </div>
+      </div>
+    </PokemonSearchContext.Provider>
   );
 }
 

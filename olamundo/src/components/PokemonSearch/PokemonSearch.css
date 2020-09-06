@@ -1,0 +1,12 @@
+.pokemon_search {
+    display: flex;
+}
+
+.pokemon_search_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon_search_box h3 {
+    margin: 5px 0;
+}
