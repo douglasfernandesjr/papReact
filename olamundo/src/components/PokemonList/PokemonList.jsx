@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import PokemonSearchContext from "../PokemonSearch/PokemonSearchContext";
+import PokemonCard from "./PokemonCard";
 
 function PokemonList() {
   const pokemonList = useContext(PokemonSearchContext);
@@ -7,17 +8,12 @@ function PokemonList() {
     return (
       <div>
         {pokemonList.map((item, i) => (
-          <div key={i}>
-            <h3>{item.name}</h3>
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
-              Mais Informações
-            </a>
-          </div>
+          <PokemonCard key={i} url={item.url}></PokemonCard>
         ))}
       </div>
     );
-  }else{
-      return <div></div>
+  } else {
+    return <div></div>;
   }
 }
 
