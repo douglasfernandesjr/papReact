@@ -9,6 +9,7 @@ import {
 import HomePage from "./pages/HomePage";
 import TitlesPage from "./pages/TitlesPage";
 import PolaroidPage from "./pages/PolaroidPage";
+import PokemonPage from "./pages/PokemonPage";
 
 function App() {
   return (
@@ -27,10 +28,16 @@ function App() {
             <li>
               <NavLink to="/polaroid">Polaroid</NavLink>
             </li>
+            <li>
+              <NavLink to="/pokemon">Pokémon</NavLink>
+            </li>
           </ul>
         </nav>
         <header className="App-header">
           <Switch>
+            <Router path="/pokemon">
+              <PokemonPage/>
+            </Router>
             <Route path="/polaroid">
               <PolaroidPage />
             </Route>
