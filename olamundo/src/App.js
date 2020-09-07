@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import PolaroidList from "./components/PolaroidList/PolaroidList";
+import PolaroidList from "./components/PolaroidList";
 
 function App() {
   function moveMove() {
