@@ -1,2 +1,2 @@
-import Polaroid from './Polaroid';
-export default Polaroid;
+import PolaroidList from './PolaroidList';
+export default PolaroidList;
