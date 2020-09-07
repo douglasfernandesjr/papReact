@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import TitlesPage from "./pages/TitlesPage";
 import PolaroidPage from "./pages/PolaroidPage";
 import PokemonPage from "./pages/PokemonPage";
+import PokemonCardPage from "./pages/PokemonCardPage";
 
 function App() {
   return (
@@ -35,9 +36,12 @@ function App() {
         </nav>
         <header className="App-header">
           <Switch>
-            <Router path="/pokemon">
-              <PokemonPage/>
-            </Router>
+            <Route  path="/pokemon/:id">
+              <PokemonCardPage />
+            </Route >
+            <Route  path="/pokemon">
+              <PokemonPage />
+            </Route >
             <Route path="/polaroid">
               <PolaroidPage />
             </Route>
