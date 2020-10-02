@@ -6,14 +6,14 @@ function PokemonList() {
   const pokemonList = useContext(PokemonSearchContext);
   if (pokemonList != null) {
     return (
-      <div>
+      <div data-testid="list-content">
         {pokemonList.map((item, i) => (
           <PokemonCard key={i} url={item.url}></PokemonCard>
         ))}
       </div>
     );
   } else {
-    return <div></div>;
+    return <div data-testid="no-content"></div>;
   }
 }
 

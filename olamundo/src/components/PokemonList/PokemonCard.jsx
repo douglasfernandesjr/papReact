@@ -8,6 +8,9 @@ import Polaroid from "../Polaroid/Polaroid";
 function PokemonCard(props) {
   const [pokemonInfo, setPokemonInfo] = useState(null);
   useEffect(() => {
+    if (!props.url)
+      return;
+
     fetch(props.url)
       .then((resp) => resp.json())
       .then((info) => setPokemonInfo(info));

@@ -1,31 +1,23 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderSearchContext } from '../../mocks/renderers';
 
 import PokemonBadge from './PokemonBadge';
-import PokemonSearchContext from './PokemonSearchContext';
-
-function renderPokemonSearchContext(lista, ui) {
-  return render(
-    <PokemonSearchContext.Provider value={lista}>
-      {ui}
-    </PokemonSearchContext.Provider>
-  )
-}
 
 test('Contexto sem lista', () => {
-  renderPokemonSearchContext(null, <PokemonBadge />);
+  renderSearchContext(null, <PokemonBadge />);
 
   expect(screen.getByText(/pokemons!$/)).toHaveTextContent('Esta geração possui 0 pokemons!');
 });
 
 test('Contexto com lista vazia', () => {
-  renderPokemonSearchContext([], <PokemonBadge />);
+  renderSearchContext([], <PokemonBadge />);
 
   expect(screen.getByText(/pokemons!$/)).toHaveTextContent('Esta geração possui 0 pokemons!');
 });
 
 test('Context com lista', () => {
-  renderPokemonSearchContext(new Array(3), <PokemonBadge />);
+  renderSearchContext(new Array(3), <PokemonBadge />);
 
   expect(screen.getByText(/pokemons!$/)).toHaveTextContent('Esta geração possui 3 pokemons!');
 });
