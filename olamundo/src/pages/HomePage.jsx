@@ -5,7 +5,7 @@ function HomePage() {
   return (
     <>
       <img src={logo} className="App-logo" alt="logo" />
-      <p>
+      <p data-testid="texto">
         Escolha uma página no menu superior
       </p>
       <a

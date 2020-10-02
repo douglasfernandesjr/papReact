@@ -19,6 +19,7 @@ export class Title extends Component {
       <div>
         <input
           type="text" name="name" value={this.state.title} onChange={this.handleChange}
+          data-testid="input"
         />
         <h1>{this.state.title}</h1>
       </div>
