@@ -28,7 +28,7 @@ function Polaroid(props) {
   }
 
   return (
-    <div className={"polaroid " + classNames} onClick={handleClick}>
+    <div className={"polaroid " + classNames} onClick={handleClick} data-testid="polaroid">
       <img src={props.url} alt={props.text}></img>
       {inner}
     </div>
