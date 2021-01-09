@@ -23,6 +23,7 @@ test('Mensagem via props', () => {
 test('Alterar a mensagem', () => {
   render(<CoolTitle />);
 
+  userEvent.clear(screen.getByRole('textbox'));
   userEvent.type(screen.getByRole('textbox'), 'teste');
 
   expect(screen.getByText(/teste/i)).toBeInTheDocument();
